@@ -1,0 +1,78 @@
+
+###create index tickets (elastic api)
+PUT http://localhost:9200/tickets
+
+###available indexes (elastic api)
+# curl -XGET localhost:9200/_cat/indices/
+GET localhost:9200/_cat/indices/
+
+###our requst to add element to ticket index (repo)
+POST http://localhost:8080/api/v1/tickets/repo
+Content-Type: application/json
+
+{
+  "ticketDto": {
+    "ticket_no": "12345",
+    "bookRef": "ABC123",
+    "passengerId": "P123",
+    "passengerName": "John Doe"
+  }
+}
+
+###our requst to add element to ticket index (repo)
+POST http://localhost:8080/api/v1/tickets/repo/bulk
+Content-Type: application/json
+
+{
+  "tickets": [
+    {
+      "ticket_no": "1234555",
+      "bookRef": "ABC123",
+      "passengerId": "P12ssssssss3",
+      "passengerName": "John Doe"
+    },
+    {
+      "ticket_no": "67890",
+      "bookRef": "DEF456",
+      "passengerId": "P456",
+      "passengerName": "Jane Smith"
+    }
+  ]
+}
+
+###our requst to get tickets by containing name (repo)
+GET http://localhost:8080/api/v1/tickets/repo?name=MAKSIM
+Content-Type: application/json
+###
+GET http://localhost:8080/api/v1/tickets/native?q=MAKSIM
+Content-Type: application/json
+
+###
+GET http://localhost:8080/api/v1/tickets/native/suggestions?q=ELENA%20
+Content-Type: application/json
+###
+GET http://localhost:9200/tickets/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "MAKSIM",
+        "fuzziness": "0.5"
+      }
+    }
+  }
+}
+
+###
+GET  http://localhost:9200/tickets/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "passenger_name": "ALEKSANDR"
+    }
+  }
+}
