@@ -17,7 +17,7 @@ The Elasticsearch Spring
 
 2. Склонируйте репозиторий проекта:
 ```
-git clone https://github.com/yourusername/elasticsearch-spring-demo.git
+git clone https://github.com/irakli8888/elasticsearch-project.git
 ```
 
 3. Подготовьте окружение с помощью Docker Compose:
@@ -40,7 +40,7 @@ docker-compose up -d
 1. Убедитесь, что у вас установлен Docker и Docker Compose.
 2. Склонируйте репозиторий проекта:
 ```
-git clone https://github.com/yourusername/elasticsearch-project.git
+git clone https://github.com/irakli8888/elasticsearch-project.git
 ```
 3. Перейдите в директорию проекта:
 ```
