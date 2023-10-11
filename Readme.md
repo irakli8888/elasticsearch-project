@@ -40,11 +40,11 @@ docker-compose up -d
 1. Убедитесь, что у вас установлен Docker и Docker Compose.
 2. Склонируйте репозиторий проекта:
 ```
-git clone https://github.com/yourusername/elasticsearch-spring-demo.git
+git clone https://github.com/yourusername/elasticsearch-project.git
 ```
 3. Перейдите в директорию проекта:
 ```
-cd elasticsearch-spring-demo
+cd elasticsearch-project
 ```
 4. Запустите контейнеры с помощью команды:
 ```
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ### UI
 
-1. Откройте http://localhost:8080 в браузере.
+1. Откройте http://localhost:8080/search в браузере.
 
 2. На главной странице вы поисковую строку.
 
