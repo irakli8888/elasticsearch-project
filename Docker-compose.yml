@@ -61,7 +61,7 @@ services:
         - odfe-net
   logstash:
     user: root
-    image: docker.elastic.co/logstash/logstash-oss:7.9.1
+    image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
     logging:
       driver: "json-file"
       options:
